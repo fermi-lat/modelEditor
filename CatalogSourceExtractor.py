@@ -8,7 +8,7 @@
 from tkMessageBox import showerror
 
 # Third-party modules
-import pyfits
+import astropy.io.fits as pyfits
 from numpy import floor,log10,cos,sin,arccos,pi,array,log
 
 # Project modules
