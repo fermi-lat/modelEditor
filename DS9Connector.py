@@ -17,7 +17,7 @@ import Queue
 import re
 
 # Third-party modules
-from ds9 import *
+from pyds9 import *
 
 #******************************************************************************
 
