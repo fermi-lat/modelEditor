@@ -8,7 +8,7 @@ from tkMessageBox import showerror
 # Standard modules
 
 # Third-party modules
-import pyfits
+import astropy.io.fits as pyfits
 
 # Project modules
 
