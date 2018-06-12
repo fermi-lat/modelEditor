@@ -20,7 +20,7 @@ import re
 try:
     from pyds9 import *
 except ImportError:
-    raise ImportError('pyDS9 not found!')
+    raise ImportError('ModelEditor: pyDS9 not found!')
 #******************************************************************************
 
 class DS9Connector():
