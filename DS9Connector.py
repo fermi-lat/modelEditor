@@ -17,8 +17,10 @@ import Queue
 import re
 
 # Third-party modules
-from pyds9 import *
-
+try:
+    from pyds9 import *
+except ImportError:
+    raise ImportError('pyDS9 not found!')
 #******************************************************************************
 
 class DS9Connector():
