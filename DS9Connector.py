@@ -20,7 +20,10 @@ import re
 try:
     from pyds9 import *
 except ImportError:
-    raise ImportError('ModelEditor: pyDS9 not found!')
+    print(" ModelEditor requires pyDS9, which is not found.\n",
+          "Ensure that it is installed on your machine, i.e., pip install pyDS9.\n",
+          "Enjoy your Analysis!", file=sys.stderr)
+    sys.exit(-1)
 #******************************************************************************
 
 class DS9Connector():
