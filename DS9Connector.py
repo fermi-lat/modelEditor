@@ -3,12 +3,14 @@
 #******************************************************************************
 
 # Import external modules.
+from __future__ import print_function
 from Source import Source
 from Parameter import Parameter
 from SpatialModel import SpatialModel
 from FitsFile import FitsFile
 
 # Standard modules
+from os import sys
 from tkMessageBox import askyesno, showwarning
 from tkFileDialog import Open
 import thread
