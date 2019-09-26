@@ -8,6 +8,9 @@ Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
 
+modeleditorBin = progEnv.Program('modeleditor', 'src/modeleditor.cxx')
+
 progEnv.Tool('registerTargets', package = 'modelEditor', 
              data = (listFiles(['*.xsd'])),
-             python = (listFiles(['*.py'])))
+             python = (listFiles(['*.py'])),
+             binaryCxts = [[modeleditorBin, progEnv]])
