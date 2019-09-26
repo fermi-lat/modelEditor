@@ -11,6 +11,6 @@
 
 int main(int iargc, char * argv[]) {
    std::ostringstream command;
-   command << "python $INST_DIR/lib/python2.7/site-packages/fermitools/ModelEditor.py";
+   command << "python $CONDA_PREFIX/lib/python2.7/site-packages/fermitools/ModelEditor.py";
    std::system(command.str().c_str());
 }
