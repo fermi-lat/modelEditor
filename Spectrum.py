@@ -414,6 +414,40 @@ class Spectrum(Element, ParameterSet):
                   free  = False)
         ],
 
+        'PLSuperExpCutoff3':
+        [
+        Parameter(name  = 'Prefactor',
+                  value = 1.0,
+                  scale = 1.0e-11,
+                  min   = 1.0e-5,
+                  max   = 1000.0,
+                  free  = True),
+        Parameter(name  = 'IndexS',
+                  value = 1.7,
+                  scale = -1.0,
+                  min   = -1.5,
+                  max   = 5.0,
+                  free  = True),
+        Parameter(name  = 'Scale',
+                  value = 1.0,
+                  scale = 1000.0,
+                  min   = 0.001,
+                  max   = 1000.0,
+                  free  = False),
+        Parameter(name  = 'Expfactor2',
+                  value = 0.001,
+                  scale = 1.0,
+                  min   = -1.0,
+                  max   = 1,
+                  free  = True),
+        Parameter(name  = 'Index2',
+                  value = 1.0,
+                  scale = 1.0,
+                  min   = 0.0,
+                  max   = 2.0,
+                  free  = False)
+        ],
+
         'RadialDisk':
         [
         Parameter(name  = 'Radius',
