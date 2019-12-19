@@ -448,6 +448,50 @@ class Spectrum(Element, ParameterSet):
                   free  = False)
         ],
 
+        'RadialDisk':
+        [
+        Parameter(name  = 'Radius',
+                  value = 0.2,
+                  scale = 1.0,
+                  min   = 0.0,
+                  max   = 10.0,
+                  free  = False),
+        Parameter(name  = 'RA',
+                  value = 166.1138,
+                  scale = 1.0,
+                  min   = -360.,
+                  max   = 360.0,
+                  free  = True),
+        Parameter(name  = 'Dec',
+                  value = 38.2088,
+                  scale = 1.0,
+                  min   = -90.0,
+                  max   = 90.0,
+                  free  = False)
+        ],
+
+        'RadialGaussian':
+        [
+        Parameter(name  = 'Sigma',
+                  value = 0.2,
+                  scale = 1.0,
+                  min   = 0.0,
+                  max   = 10.0,
+                  free  = False),
+        Parameter(name  = 'RA',
+                  value = 166.1138,
+                  scale = 1.0,
+                  min   = -360.,
+                  max   = 360.0,
+                  free  = True),
+        Parameter(name  = 'Dec',
+                  value = 38.2088,
+                  scale = 1.0,
+                  min   = -90.0,
+                  max   = 90.0,
+                  free  = False)
+        ],
+
         'SmoothBrokenPowerLaw':
         [
         Parameter(name  = 'Prefactor',
