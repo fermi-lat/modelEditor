@@ -10,7 +10,7 @@
 # Standard modules
 import os
 from tkFileDialog import Open, SaveAs
-from tkMessageBox import askyesno, showwarning
+from tkinter.messagebox import askyesno, showwarning
 import Tkinter
 import sys
 from xml.parsers.expat import ExpatError
