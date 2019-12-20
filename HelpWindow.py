@@ -14,7 +14,7 @@ import Pmw
 
 #******************************************************************************
 
-class HelpWindow(Tkinter.Toplevel):
+class HelpWindow(tkinter.Toplevel):
     """Class to create a ModelEditor help window.
 
     Data attributes:
@@ -33,7 +33,7 @@ class HelpWindow(Tkinter.Toplevel):
 
         self: This object.
 
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         Return value:
 
@@ -43,7 +43,7 @@ class HelpWindow(Tkinter.Toplevel):
         """
 
         # Initialize the parent class.
-        Tkinter.Toplevel.__init__(self, parent)
+        tkinter.Toplevel.__init__(self, parent)
 
         # Create widgets.
         self._makeWidgets(path)
@@ -75,7 +75,7 @@ class HelpWindow(Tkinter.Toplevel):
         self._scrolledText.importfile(path)
 
         # Create the close button.
-        self._closeButton = Tkinter.Button(self, text = 'Close',
+        self._closeButton = tkinter.Button(self, text = 'Close',
                                            command = self._onClose)
         self._closeButton.pack()
 
@@ -89,7 +89,7 @@ class HelpWindow(Tkinter.Toplevel):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('HelpWindow test')
 
