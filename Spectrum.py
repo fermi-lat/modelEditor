@@ -555,7 +555,7 @@ class Spectrum(Element, ParameterSet):
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError ('Not a DOM element (%s)!' % dom)
         else:
             self.setType(type)
             self.setFile(file)
@@ -683,7 +683,7 @@ class Spectrum(Element, ParameterSet):
         invalid type is specified, raise a TypeError exception.
         """
         if not self.validType(type):
-            raise TypeError, 'Invalid Spectrum type (%s)!' % type
+            raise TypeError('Invalid Spectrum type (%s)!' % type)
         self._type = type
 
     def validType(self, type):
@@ -763,7 +763,7 @@ class Spectrum(Element, ParameterSet):
         invalid file is specified, raise a TypeError exception.
         """
         if not self.validFile(file):
-            raise TypeError, 'Invalid Spectrum file (%s)!' % file
+            raise TypeError('Invalid Spectrum file (%s)!' % file)
         self._file = file
 
     def validFile(self, file):

@@ -122,7 +122,7 @@ class Parameter(Element):
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError('Not a DOM element (%s)!' % dom)
         else:
             self.setName(name)
             self.setMin(min)   # Set min, max before value to allow
@@ -274,7 +274,7 @@ class Parameter(Element):
         new name is invalid, raise a TypeError exception.
         """
         if not self.validName(name):
-            raise TypeError, 'Invalid Parameter name (%s)!' % name
+            raise TypeError('Invalid Parameter name (%s)!' % name)
         self._name = str(name)
 
     def validName(self, name):
@@ -343,7 +343,7 @@ class Parameter(Element):
         new value is invalid, raise a TypeError exception.
         """
         if not self.validValue(value):
-            raise TypeError, 'Invalid Parameter value (%s)!' % value
+            raise TypeError('Invalid Parameter value (%s)!' % value)
         self._value = float(value)
 
     def validValue(self, value):
@@ -415,7 +415,7 @@ class Parameter(Element):
         new scale is invalid, raise a TypeError exception.
         """
         if not self.validScale(scale):
-            raise TypeError, 'Invalid Parameter scale (%s)!' % scale
+            raise TypeError('Invalid Parameter scale (%s)!' % scale)
         self._scale = float(scale)
 
     def validScale(self, scale):
@@ -485,7 +485,7 @@ class Parameter(Element):
         new min is invalid, raise a TypeError exception.
         """
         if not self.validMin(min):
-            raise TypeError, 'Invalid Parameter min (%s)!' % min
+            raise TypeError('Invalid Parameter min (%s)!' % min)
         if min is not None:
             min = float(min)
         self._min = min
@@ -563,7 +563,7 @@ class Parameter(Element):
         new max is invalid, raise a TypeError exception.
         """
         if not self.validMax(max):
-            raise TypeError, 'Invalid Parameter max (%s)!' % max
+            raise TypeError('Invalid Parameter max (%s)!' % max)
         if max is not None:
             max = float(max)
         self._max = max
@@ -636,7 +636,7 @@ class Parameter(Element):
         new free is invalid, raise a TypeError exception.
         """
         if not self.validFree(free):
-            raise TypeError, 'Invalid Parameter free (%s)!' % free
+            raise TypeError('Invalid Parameter free (%s)!' % free)
         self._free = bool(free)
 
     def validFree(self, free):

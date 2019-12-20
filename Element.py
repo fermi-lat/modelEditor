@@ -72,7 +72,7 @@ class Element:
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError('Not a DOM element (%s)!' % dom)
         else:
             self.setTagName(tagName)
 
@@ -295,7 +295,7 @@ class Element:
         the new tag name is invalid, raise a TypeError exception.
         """
         if not self.validTagName(tagName):
-            raise TypeError, 'Invalid tag name (%s)!' % tagName
+            raise TypeError('Invalid tag name (%s)!' % tagName)
         self._tagName = tagName
 
     def validTagName(self, tagName = None):
@@ -354,7 +354,7 @@ class Element:
             return True
         if boolean == 'false' or boolean == '0':
             return False
-        raise TypeError, 'Invalid XML boolean value (%s)!' % boolean
+        raise TypeError('Invalid XML boolean value (%s)!' % boolean)
 
     def booleanToXMLBoolean(self, boolean = None, numeric = False):
         """Convert a Python boolean value to a XML boolean value.
@@ -391,7 +391,7 @@ class Element:
                 return '0'
             else:
                 return 'false'
-        raise TypeError, 'Invalid Python boolean value (%s)!' % boolean
+        raise TypeError('Invalid Python boolean value (%s)!' % boolean)
 
 #******************************************************************************
 

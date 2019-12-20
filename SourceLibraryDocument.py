@@ -294,9 +294,9 @@ class SourceLibraryDocument():
         invalid, raise a TypeError exception.
         """
         if not self.validSourceLibrary(sourceLibrary):
-            raise TypeError, \
-                  'Invalid SourceLibraryDocument SourceLibrary (%s)!' \
-                  % sourceLibrary
+            raise TypeError \
+                  ('Invalid SourceLibraryDocument SourceLibrary (%s)!' \
+                  % sourceLibrary)
         self._sourceLibrary = deepcopy(sourceLibrary)
 
     def validSourceLibrary(self, sourceLibrary):

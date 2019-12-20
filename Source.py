@@ -103,7 +103,7 @@ class Source(Element):
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError('Not a DOM element (%s)!' % dom)
         else:
             self.setName(name)
             self.setType(type)
@@ -240,8 +240,8 @@ class Source(Element):
         elif spectrumType == 'BrokenPowerLaw2':
             gtobssimSource = self._brokenPowerLaw22Gtobssim(domDocument)
         else:
-            raise TypeError, 'Not a supported spectrum type (%s)!' % \
-                  spectrumType
+            raise TypeError('Not a supported spectrum type (%s)!' % \
+                  spectrumType)
 
         # Return the new DOM element.
         return gtobssimSource
@@ -284,7 +284,7 @@ class Source(Element):
         new name is invalid, raise a TypeError exception.
         """
         if not self.validName(name):
-            raise TypeError, 'Invalid Source name (%s)!' % name
+            raise TypeError('Invalid Source name (%s)!' % name)
         self._name = str(name)
 
     def validName(self, name):
@@ -350,7 +350,7 @@ class Source(Element):
         invalid type is specified, raise a TypeError exception.
         """
         if not self.validType(type):
-            raise TypeError, 'Invalid Source type (%s)!' % type
+            raise TypeError('Invalid Source type (%s)!' % type)
         self._type = type
 
     def validType(self, type):
@@ -434,7 +434,7 @@ class Source(Element):
         exception.
         """
         if not self.validSpectrum(spectrum):
-            raise TypeError, 'Invalid Source Spectrum (%s)!' % spectrum
+            raise TypeError('Invalid Source Spectrum (%s)!' % spectrum)
         self._spectrum = deepcopy(spectrum)
 
     def validSpectrum(self, spectrum):
@@ -498,7 +498,7 @@ class Source(Element):
         exception.
         """
         if not self.validSpatialModel(spatialModel):
-            raise TypeError, 'Invalid Source SpatialModel (%s)!' % spatialModel
+            raise TypeError('Invalid Source SpatialModel (%s)!' % spatialModel)
         self._spatialModel = deepcopy(spatialModel)
 
     def validSpatialModel(self, spatialModel):
@@ -621,8 +621,8 @@ class Source(Element):
         # Make sure the spatial model is supported.
         spatialModelType = spatialModel.getType()
         if spatialModelType not in ('SkyDirFunction'):
-            raise TypeError, \
-                  'Not a supported spatial model type (%s)!' % spatialModelType
+            raise TypeError('Not a supported spatial model type (%s)!' \
+                  % spatialModelType)
 
         # Set the coordinates of the source.
         parameter = spatialModel.getParameterByName('RA')
@@ -743,8 +743,8 @@ class Source(Element):
         # Make sure the spatial model is supported.
         spatialModelType = spatialModel.getType()
         if spatialModelType not in ('SkyDirFunction'):
-            raise TypeError, \
-                  'Not a supported spatial model type (%s)!' % spatialModelType
+            raise TypeError ('Not a supported spatial model type (%s)!' \
+                  % spatialModelType)
 
         # Set the coordinates of the source.
         parameter = spatialModel.getParameterByName('RA')
@@ -852,8 +852,8 @@ class Source(Element):
         # Make sure the spatial model is supported.
         spatialModelType = spatialModel.getType()
         if spatialModelType not in ('SkyDirFunction'):
-            raise TypeError, \
-                  'Not a supported spatial model type (%s)!' % spatialModelType
+            raise TypeError('Not a supported spatial model type (%s)!' \
+                  % spatialModelType)
 
         # Set the coordinates of the source.
         parameter = spatialModel.getParameterByName('RA')
@@ -972,8 +972,8 @@ class Source(Element):
         # Make sure the spatial model is supported.
         spatialModelType = spatialModel.getType()
         if spatialModelType not in ('SkyDirFunction'):
-            raise TypeError, \
-                  'Not a supported spatial model type (%s)!' % spatialModelType
+            raise TypeError('Not a supported spatial model type (%s)!' \
+                  % spatialModelType)
 
         # Set the coordinates of the source.
         parameter = spatialModel.getParameterByName('RA')
