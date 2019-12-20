@@ -11,11 +11,11 @@ from FitsFile import FitsFile
 
 # Standard modules
 from os import sys
-from tkMessageBox import askyesno, showwarning
-from tkFileDialog import Open
-import thread
+from tkinter.messagebox import askyesno, showwarning
+from tkinter.filedialog import Open
+import _thread #this should get updated to the threading module at some point
 from time import sleep
-import Queue
+import queue
 import re
 
 # Third-party modules

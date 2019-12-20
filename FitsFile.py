@@ -3,7 +3,7 @@
 #******************************************************************************
 
 # Import external modules.
-from tkMessageBox import showerror
+from tkinter.messagebox import showerror
 
 # Standard modules
 
