@@ -71,7 +71,7 @@ class HelpWindow(Tkinter.Toplevel):
         # Create the Text widget and read the help text.
         self._scrolledText = Pmw.ScrolledText(self)
         self._scrolledText.pack(expand = 'yes', fill = 'both')
-        print "path = ", path
+        print ("path = ", path)
         self._scrolledText.importfile(path)
 
         # Create the close button.

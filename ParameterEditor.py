@@ -419,15 +419,15 @@ domDocument = xml.dom.minidom.Document()
 
 # Printing routine for buttons.
 def _print(editor):
-    print editor.get()
-    if editor.getChanged(): print "Changed by the editor."
+    print (editor.get())
+    if editor.getChanged(): print ("Changed by the editor.")
 
 # XML printing routine for buttons.
 def _printXML(editor):
     element = editor.get()
     dom = element.toDom(domDocument)
-    print dom.toxml()
-    if editor.getChanged(): print "Changed by the editor."
+    print (dom.toxml())
+    if editor.getChanged(): print ("Changed by the editor.")
 
 if __name__ == '__main__':
 

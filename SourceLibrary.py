@@ -479,7 +479,7 @@ class SourceLibrary(Element):
         when the parameter being sorted on is not present in all sources.  Sources without the sort
         parameter should be sorted to the bottom of the list.
         """
-#        print "performing a", params['sortType'], "sort, ascending =", params['ascending']
+#        print ("performing a", params['sortType'], "sort, ascending =", params['ascending'])
 
         sources = self.getSources()
         if ("Name" == params['sortType']):
@@ -499,7 +499,7 @@ class SourceLibrary(Element):
         elif ("Flux" == params['sortType']):
             sources.sort(key=lambda src: self._getIntegralFlux(src), reverse = not params['ascending'])
         else:
-            print "Specified sort type not implemented"
+            print ("Specified sort type not implemented")
             
         self.setSources(sources)  #store sorted source list
         

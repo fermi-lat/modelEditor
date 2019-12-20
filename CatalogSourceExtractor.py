@@ -434,7 +434,7 @@ class CatalogSourceExtractor():
         isoSource = Source(name= self.catParams['isTempName'], type="DiffuseSource", spectrum=isoSpectrum, spatialModel=isoSpatial)
         self.sources.append(isoSource)
 
-#        print "point source count =", ptSrcNum
+#        print ("point source count =", ptSrcNum)
 
         # @TODO Add in the diffuse sources
 
@@ -561,7 +561,7 @@ class CatalogSourceExtractor():
         isoSource = Source(name= self.catParams['isTempName'], type="DiffuseSource", spectrum=isoSpectrum, spatialModel=isoSpatial)
         self.sources.append(isoSource)
 
-#        print "point source count =", ptSrcNum
+#        print ("point source count =", ptSrcNum)
 
         # @TODO Add in the diffuse sources
     def _PLspec(self,source,f,i,p,dist,sig):
@@ -846,4 +846,4 @@ if __name__ == '__main__':
     }
     extractor = CatalogSourceExtractor(testParams)
     sources = extractor.getSources()
-    print sources
+    print (sources)

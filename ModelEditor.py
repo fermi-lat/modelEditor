@@ -116,7 +116,7 @@ class ModelEditorApp(Tkinter.Frame):
         menuBar.add_cascade(label = 'File', menu = fileMenu)
 
     def _onFileNew(self):
-        if debug: print 'File/New'
+        if debug: print ('File/New')
 
         # If the current document has changed, prompt to save it.
         self._saveIfChanged()
@@ -125,7 +125,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._new()
 
     def _onFileOpen(self):
-        if debug: print 'File/Open...'
+        if debug: print ('File/Open...')
 
         # If the current document has changed, prompt to save it.
         self._saveIfChanged()
@@ -138,7 +138,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._open(path)
 
     def _onFileClose(self):
-        if debug: print 'File/Close'
+        if debug: print ('File/Close')
 
         # If the current document has changed, prompt to save it.
         self._saveIfChanged()
@@ -147,7 +147,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._new()
 
     def _onFileSave(self):
-        if debug: print 'File/Save'
+        if debug: print ('File/Save')
 
         # If no path is associated with the current document, prompt the
         # user for a path.
@@ -157,7 +157,7 @@ class ModelEditorApp(Tkinter.Frame):
             self._save(self._path)
 
     def _onFileSaveAs(self):
-        if debug: print 'File/Save As...'
+        if debug: print ('File/Save As...')
 
         # Get the new path for this document. If none, return.
         path = SaveAs().show()
@@ -168,7 +168,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._save(path)
 
     def _onFileExportToObsSim(self):
-        if debug: print 'File/Export to ObsSim...'
+        if debug: print ('File/Export to ObsSim...')
 
         # Get the new path for this document. If none, return.
         path = SaveAs().show()
@@ -179,7 +179,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._exportToObsSim(path)
 
     def _onFileExit(self):
-        if debug: print 'File/Exit'
+        if debug: print ('File/Exit')
 
         # If the current document has changed, prompt to save it.
         self._saveIfChanged()
@@ -311,16 +311,16 @@ class ModelEditorApp(Tkinter.Frame):
         editMenu.entryconfigure(4, state = 'disabled')
 
     def onEditCut(self):
-        if debug: print 'Edit/Cut'
+        if debug: print ('Edit/Cut')
 
     def onEditCopy(self):
-        if debug: print 'Edit/Copy'
+        if debug: print ('Edit/Copy')
 
     def onEditPaste(self):
-        if debug: print 'Edit/Paste'
+        if debug: print ('Edit/Paste')
 
     def onEditUndo(self):
-        if debug: print 'Edit/Undo'
+        if debug: print ('Edit/Undo')
 
     #--------------------------------------------------------------------------
 
@@ -350,7 +350,7 @@ class ModelEditorApp(Tkinter.Frame):
         menuBar.add_cascade(label = 'Source', menu = sourceMenu)
 
     def _onSourceAddSource(self):
-        if debug: print 'Source/Add Source'
+        if debug: print ('Source/Add Source')
 
         # Create a new Source.
         name = 'Source %d' % self._getSourceID()
@@ -366,7 +366,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._sourceLibraryDocumentEditor.set(sourceLibraryDocument)
 
     def _onSourceRemoveSource(self):
-        if debug: print 'Source/Remove Source'
+        if debug: print ('Source/Remove Source')
 
         # Fetch the current SourceLibraryDocument.
         sourceLibraryDocument = self._sourceLibraryDocumentEditor.get()
@@ -398,7 +398,7 @@ class ModelEditorApp(Tkinter.Frame):
         self.ds9.plotSources()
 
     def _onSourceAddPointSource(self):
-        if debug: print 'Source/Add Point Source'
+        if debug: print ('Source/Add Point Source')
 
         # Create a new point Source.
         name = 'Point Source %d' % self._getSourceID()
@@ -414,7 +414,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._sourceLibraryDocumentEditor.set(sourceLibraryDocument)
 
     def _onSourceAddDiffuseSource(self):
-        if debug: print 'Source/Add Diffuse Source'
+        if debug: print ('Source/Add Diffuse Source')
 
         # Create a new diffuse Source.
         name = 'Diffuse Source %d' % self._getSourceID()
@@ -430,7 +430,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._sourceLibraryDocumentEditor.set(sourceLibraryDocument)
 
     def _onSourceAddCatalogSources(self):
-        if debug: print 'Source/Add Catalog Sources'
+        if debug: print ('Source/Add Catalog Sources')
         # Open the dialog to prompt for the necessary input
         win = AddCatalogSourcesDialog()
         self.catParams = win.getData()
@@ -462,7 +462,7 @@ class ModelEditorApp(Tkinter.Frame):
             self.ds9.plotSources()
 
     def _onSourceAddEGRETDiffuseSource(self):
-        if debug: print 'Source/Add EGRET Diffuse Source'
+        if debug: print ('Source/Add EGRET Diffuse Source')
 
         # Create a new EGRET diffuse Source.
         name = 'EGRET Diffuse Source %d' % self._getSourceID()
@@ -520,7 +520,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._sourceLibraryDocumentEditor.selectSource(name)
 
     def _onSourceAddGALPROPDiffuseSource(self):
-        if debug: print 'Source/Add GALPROP Diffuse Source'
+        if debug: print ('Source/Add GALPROP Diffuse Source')
 
         # Create a new GALPROP diffuse Source.
         name = 'GALPROP Diffuse Source %d' % self._getSourceID()
@@ -567,7 +567,7 @@ class ModelEditorApp(Tkinter.Frame):
         self._sourceLibraryDocumentEditor.selectSource(name)
 
     def _onSourceAddExtragalacticDiffuseSource(self):
-        if debug: print 'Source/Add Extragalactic Source'
+        if debug: print ('Source/Add Extragalactic Source')
 
         # Create a new extragalactic diffuse Source.
         name = 'Extragalactic Diffuse Source %d' % self._getSourceID()
@@ -701,12 +701,12 @@ class ModelEditorApp(Tkinter.Frame):
         menuBar.add_cascade(label = 'Help', menu = helpMenu)
 
     def _onHelpHelp(self):
-        if debug: print 'Help/Help'
+        if debug: print ('Help/Help')
         path = os.environ['FERMI_INST_DIR'] + '/help/help.txt'
         helpWindow = HelpWindow(path = path)
 
     def _onHelpAbout(self):
-        if debug: print 'Help/About...'
+        if debug: print ('Help/About...')
 
         # Create the 'about the program' dialog.
         Pmw.aboutversion('1.2')
@@ -747,7 +747,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         path = sys.argv[1]
         if debug:
-            print 'path = ' + path
+            print ('path = ' + path)
 
     # Create the root window.
     root = Tkinter.Tk()
