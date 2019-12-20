@@ -384,4 +384,4 @@ if __name__ == '__main__':
     Pmw.initialise()
     dialog = AddCatalogSourcesDialog()
     data = dialog.getData()
-    print data
+    print (data)

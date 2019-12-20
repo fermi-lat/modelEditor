@@ -79,15 +79,15 @@ class DS9Connector():
         if (not self._isConnected()):
             try:
                 self.ds9 = ds9()
-    #            print "Setting wcs"
+    #            print ("Setting wcs")
                 self.ds9.set("regions system wcs")
-    #            print "Clearing existing regions in display"
+    #            print ("Clearing existing regions in display")
                 self.ds9.set("regions delete all")
-    #            print "Creating communication queue"
+    #            print ("Creating communication queue")
                 self.queue = Queue.Queue()
-    #            print "Starting monitoring thread"
+    #            print ("Starting monitoring thread")
                 self.monitorThread = thread.start_new_thread(self._ds9Monitor, (self.sourceLibraryDocumentEditor,))
-    #            print "Thread started"
+    #            print ("Thread started")
                 self._update()
             except ErrorValue:
                 showerror("DS9 Connection Failed: {}".format(ErrorValue.strerror))
@@ -380,7 +380,7 @@ class DS9Connector():
             Access to the SourceLibraryDocumentEditor object is controlled
         via a thread lock to prevent race conditions.
         """
-#        print "entering _checkForSelectedDS9Region"
+#        print ("entering _checkForSelectedDS9Region")
         regionList = self._getDS9Regions("selected")
         # find the region in the list of sources
         if (len(regionList) > 0):
@@ -397,7 +397,7 @@ class DS9Connector():
                     ra = float(src.getSpatialModel().getParameterByName("RA").getValue())
                     dec = float(src.getSpatialModel().getParameterByName("DEC").getValue())
                     if (abs(targetRA - ra) < self.tolerance and abs(targetDec - dec) < self.tolerance):
-#                        print "New Source Selected:",ra,",",dec
+#                        print ("New Source Selected:",ra,",",dec)
                         self.queue.put((self._setDS9SelectedSrc,[src]),False)
                         return  # we found it so we're done
                 except: # we just skip those that don't have a position
@@ -463,7 +463,7 @@ class DS9Connector():
         this method, probably involving additional data structures to hold
         the data searched over to improve search performace.
         """
-#        print "entering _checkForNewDS9Regions"
+#        print ("entering _checkForNewDS9Regions")
         # get full list of ds9 regions
         regionList = self._getDS9Regions("all")
 
@@ -510,7 +510,7 @@ class DS9Connector():
         via a thread lock to prevent race conditions.  As this method causes
         modifications in the GUI, it must be run on the main thread.
         """
-#        print "Entering _addNewSource"
+#        print ("Entering _addNewSource")
         # create a name
         name = "ME_" + str(ra) + "_" + str(dec)
         # make a default PL source
@@ -521,17 +521,17 @@ class DS9Connector():
         spatialModel = SpatialModel(type="SkyDirFunction",parameters=[raParam,decParam])
         source.setSpatialModel(spatialModel)
 
-#        print "Locking editor"
+#        print ("Locking editor")
         # add source to model list
         with self.docLock:
             sourceLibraryDocument = self.sourceLibraryDocumentEditor.get()
             sourceLibraryDocument.addSource(source)
             self.sourceLibraryDocumentEditor.set(sourceLibraryDocument)
             self.sourceLibraryDocumentEditor.commit()
-#        print "Unlocked editor"
+#        print ("Unlocked editor")
         #get Source index of new source and set as selected source
         self.sourceLibraryDocumentEditor.selectSource(name)
-#        print "Leaving _addNewSource"
+#        print ("Leaving _addNewSource")
 
     def _update(self):
         """Poll communication queue for ds9 changes.

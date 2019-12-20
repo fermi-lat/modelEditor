@@ -300,7 +300,7 @@ class SourceLibraryDocumentEditor(Tkinter.Frame):
         Manually select the designated Source in the source list box,
         and update the editor appropriately.
         """
-#        print sourceName
+#        print (sourceName)
         
         # Select the specified source.
         self._sourceLibraryEditor.selectSource(sourceName)
@@ -320,17 +320,17 @@ domDocument = xml.dom.minidom.Document()
 
 # Printing routine for buttons.
 def _print(editor):
-    print editor.get()
+    print (editor.get())
     if editor.getChanged():
-        print "Changed by the editor."
+        print ("Changed by the editor.")
 
 # XML printing routine for buttons.
 def _printXML(editor):
     document = editor.get()
     dom = document.toDom()
-    print dom.toxml()
+    print (dom.toxml())
     if editor.getChanged():
-        print "Changed by the editor."
+        print ("Changed by the editor.")
 
 if __name__ == '__main__':
 
