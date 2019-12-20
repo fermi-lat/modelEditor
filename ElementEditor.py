@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-import Tkinter
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -15,7 +15,7 @@ from Element import Element
 
 #******************************************************************************
 
-class ElementEditor(Tkinter.Frame):
+class ElementEditor(tkinter.Frame):
     """Class to edit ModelEditor Element objects.
 
     Generic ElementEditor class which allows the user to edit a XML
@@ -32,7 +32,7 @@ class ElementEditor(Tkinter.Frame):
 
     _balloon: (Pmw.Balloon) Balloon help object.
 
-    _tagNameLabel: (Tkinter.Label) Holds the tag name for the Element.
+    _tagNameLabel: (tkinter.Label) Holds the tag name for the Element.
     """
 
     #--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ class ElementEditor(Tkinter.Frame):
 
         self: This object.
 
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         element: (Element) Element to initialize editor.
 
@@ -66,7 +66,7 @@ class ElementEditor(Tkinter.Frame):
         """
 
         # Initialize the parent class.
-        Tkinter.Frame.__init__(self, parent, *args, **kwargs)
+        tkinter.Frame.__init__(self, parent, *args, **kwargs)
 
         # Create widgets.
         self._makeWidgets()
@@ -99,7 +99,7 @@ class ElementEditor(Tkinter.Frame):
         self._balloon = Pmw.Balloon(self)
 
         # Create a Label for the element tag name, but do not display it.
-        self._tagNameLabel = Tkinter.Label(self)
+        self._tagNameLabel = tkinter.Label(self)
 
     #--------------------------------------------------------------------------
 
@@ -272,7 +272,7 @@ class ElementEditor(Tkinter.Frame):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('ElementEditor test')
 
