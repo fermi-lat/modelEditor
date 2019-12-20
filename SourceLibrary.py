@@ -76,7 +76,7 @@ class SourceLibrary(Element):
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError('Not a DOM element (%s)!' % dom)
         else:
             self.setXmlns(SourceLibrary._defaultXmlns)
             self.setTitle(title)
@@ -238,7 +238,7 @@ class SourceLibrary(Element):
         If the new XML namespace is invalid, raise a TypeError exception.
         """
         if not self.validXmlns(xmlns):
-            raise TypeError, 'Invalid SourceLibrary xmlns (%s)!' % xmlns
+            raise TypeError('Invalid SourceLibrary xmlns (%s)!' % xmlns)
         self._xmlns = str(xmlns)
 
     def validXmlns(self, xmlns):
@@ -304,7 +304,7 @@ class SourceLibrary(Element):
         If the new title is invalid, raise a TypeError exception.
         """
         if not self.validTitle(title):
-            raise TypeError, 'Invalid SourceLibrary title (%s)!' % title
+            raise TypeError('Invalid SourceLibrary title (%s)!' % title)
         self._title = str(title)
 
     def validTitle(self, title):
@@ -371,8 +371,8 @@ class SourceLibrary(Element):
         TypeError exception.
         """
         if not self.validSources(sources):
-            raise TypeError, 'Invalid SourceLibrary Sources (%s)!' % \
-                  ','.join(str(s) for s in sources)
+            raise TypeError('Invalid SourceLibrary Sources (%s)!' % \
+                  ','.join(str(s) for s in sources))
         self._sources = deepcopy(sources)
 
     def validSources(self, sources):

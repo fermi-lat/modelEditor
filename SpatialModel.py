@@ -130,7 +130,7 @@ class SpatialModel(Element, ParameterSet):
             if isinstance(dom, xml.dom.minidom.Element):
                 self.fromDom(dom)
             else:
-                raise TypeError, 'Not a DOM element (%s)!' % dom
+                raise TypeError('Not a DOM element (%s)!' % dom)
         else:
             self.setType(type)
             self.setFile(file)
@@ -258,7 +258,7 @@ class SpatialModel(Element, ParameterSet):
         an invalid type is specified, raise a TypeError exception.
         """
         if not self.validType(type):
-            raise TypeError, 'Invalid SpatialModel type (%s)!' % type
+            raise TypeError('Invalid SpatialModel type (%s)!' % type)
         self._type = type
 
     def validType(self, type):
@@ -339,7 +339,7 @@ class SpatialModel(Element, ParameterSet):
         an invalid file is specified, raise a TypeError exception.
         """
         if not self.validFile(file):
-            raise TypeError, 'Invalid SpatialModel file (%s)!' % file
+            raise TypeError('Invalid SpatialModel file (%s)!' % file)
         self._file = file
 
     def validFile(self, file):

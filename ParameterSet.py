@@ -80,8 +80,8 @@ class ParameterSet():
         exception.
         """
         if not self.validParameters(parameters):
-            raise TypeError, 'Invalid parameter set (%s)!' % \
-                  ','.join(str(p) for p in parameters)
+            raise TypeError('Invalid parameter set (%s)!' % \
+                  ','.join(str(p) for p in parameters))
         self._parameters = deepcopy(parameters)
 
     def validParameters(self, parameters):
