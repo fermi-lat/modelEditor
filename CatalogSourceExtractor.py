@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-from tkMessageBox import showerror
+from tkinter.messagebox import showerror
 
 # Third-party modules
 import astropy.io.fits as pyfits
