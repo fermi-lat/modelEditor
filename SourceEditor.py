@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-import Tkinter
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -30,7 +30,7 @@ class SourceEditor(ElementEditor):
     _nameEntryField: (Pmw.EntryField) Controls editing of the Source
     name.
 
-    _typeLabel: (Tkinter.Label) Displays the Source type. Note that
+    _typeLabel: (tkinter.Label) Displays the Source type. Note that
     this value cannot be changed by the user.
 
     _spectrumEditor: (SpectrumEditor) For editing the Spectrum.
@@ -51,7 +51,7 @@ class SourceEditor(ElementEditor):
 
         self: This object.
         
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
  
         source: (Source) Source to initialize fields.
 
@@ -99,7 +99,7 @@ class SourceEditor(ElementEditor):
         self._balloon.bind(self._nameEntryField, 'Enter the source name.')
 
         # Create and grid a Label for the Source type.
-        label = Tkinter.Label(self, text = 'Source Type:')
+        label = tkinter.Label(self, text = 'Source Type:')
         label.grid(row = 0, column = 1, sticky = 'e')
         self._typeLabel = label
 
@@ -260,7 +260,7 @@ def _printXML(editor):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('SourceEditor test')
 
@@ -268,17 +268,17 @@ if __name__ == '__main__':
     # button to dump its contents.
     sourceEditor = SourceEditor(root)
     sourceEditor.grid(row = 0, column = 0)
-    commitButton = Tkinter.Button(root, text = 'Commit',
+    commitButton = tkinter.Button(root, text = 'Commit',
                                   command = sourceEditor.commit)
     commitButton.grid(row = 0, column = 1)
-    resetButton = Tkinter.Button(root, text = 'Reset',
+    resetButton = tkinter.Button(root, text = 'Reset',
                                   command = sourceEditor.reset)
     resetButton.grid(row = 0, column = 2)
-    printButton = Tkinter.Button(root, text = 'Print',
+    printButton = tkinter.Button(root, text = 'Print',
                                  command = \
                                  lambda: _print(sourceEditor))
     printButton.grid(row = 0, column = 3)
-    printXMLButton = Tkinter.Button(root, text = 'Print XML',
+    printXMLButton = tkinter.Button(root, text = 'Print XML',
                                     command = \
                                     lambda: _printXML(sourceEditor))
     printXMLButton.grid(row = 0, column = 4)

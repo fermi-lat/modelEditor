@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-import Tkinter
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -49,7 +49,7 @@ class SourceLibraryEditor(ElementEditor):
 
         self: This object.
         
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         sourceLibrary: (SourceLibrary) SourceLibrary object to
         initialize fields.
@@ -364,7 +364,7 @@ def _printXML(editor):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('SourceLibraryEditor test')
 
@@ -380,17 +380,17 @@ if __name__ == '__main__':
     # button to dump its contents.
     sourceLibraryEditor = SourceLibraryEditor(root, sourceLibrary)
     sourceLibraryEditor.grid(row = 0, column = 0)
-    commitButton = Tkinter.Button(root, text = 'Commit',
+    commitButton = tkinter.Button(root, text = 'Commit',
                                   command = sourceLibraryEditor.commit)
     commitButton.grid(row = 0, column = 1)
-    resetButton = Tkinter.Button(root, text = 'Reset',
+    resetButton = tkinter.Button(root, text = 'Reset',
                                   command = sourceLibraryEditor.reset)
     resetButton.grid(row = 0, column = 2)
-    printButton = Tkinter.Button(root, text = 'Print',
+    printButton = tkinter.Button(root, text = 'Print',
                                  command = \
                                  lambda: _print(sourceLibraryEditor))
     printButton.grid(row = 0, column = 3)
-    printXMLButton = Tkinter.Button(root, text = 'Print XML',
+    printXMLButton = tkinter.Button(root, text = 'Print XML',
                                     command = \
                                     lambda: _printXML(sourceLibraryEditor))
     printXMLButton.grid(row = 0, column = 4)

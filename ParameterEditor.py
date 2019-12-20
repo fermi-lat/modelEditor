@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-import Tkinter
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -40,10 +40,10 @@ class ParameterEditor(ElementEditor):
     _maxEntryField: (Pmw.EntryField) For editing the maximum allowed
     Parameter value. If present, max must be a floating-point number.
 
-    _freeCheckbutton: (Tkinter.Checkbutton) For setting the Parameter
+    _freeCheckbutton: (tkinter.Checkbutton) For setting the Parameter
     free flag.
 
-    _free: (Tkinter.BooleanVar) Control variable for free flag
+    _free: (tkinter.BooleanVar) Control variable for free flag
     checkbutton.
     """
 
@@ -72,7 +72,7 @@ class ParameterEditor(ElementEditor):
 
         self: This object.
 
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         parameter: (Parameter) Parameter to initialize fields.
 
@@ -127,7 +127,7 @@ class ParameterEditor(ElementEditor):
         if ParameterEditor._showLabels:
             col = 0
             for fieldName in Parameter._fieldNames:
-                label = Tkinter.Label(self, text = fieldName,
+                label = tkinter.Label(self, text = fieldName,
                                       width = ParameterEditor._textFieldWidth)
                 label.grid(row = row, column = col, sticky = 'ew')
                 col += 1
@@ -183,8 +183,8 @@ class ParameterEditor(ElementEditor):
         # Create and grid a Checkbutton for the Parameter free
         # flag. Note that we also must create a BooleanVar to store
         # the state of the Checkbutton.
-        self._free = Tkinter.BooleanVar()
-        checkbutton = Tkinter.Checkbutton(self, variable = self._free,
+        self._free = tkinter.BooleanVar()
+        checkbutton = tkinter.Checkbutton(self, variable = self._free,
                                           width = ParameterEditor.\
                                           _textFieldWidth)
         checkbutton.grid(row = row, column = 5)
@@ -432,7 +432,7 @@ def _printXML(editor):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('ParameterEditor test')
 
@@ -441,17 +441,17 @@ if __name__ == '__main__':
     # XML form.
     parameterEditor = ParameterEditor(root, showLabels = True)
     parameterEditor.grid(row = 0, column = 0)
-    commitButton = Tkinter.Button(root, text = 'Commit',
+    commitButton = tkinter.Button(root, text = 'Commit',
                                   command = parameterEditor.commit)
     commitButton.grid(row = 0, column = 1)
-    resetButton = Tkinter.Button(root, text = 'Reset',
+    resetButton = tkinter.Button(root, text = 'Reset',
                                   command = parameterEditor.reset)
     resetButton.grid(row = 0, column = 2)
-    printButton = Tkinter.Button(root, text = 'Print',
+    printButton = tkinter.Button(root, text = 'Print',
                                  command = \
                                  lambda: _print(parameterEditor))
     printButton.grid(row = 0, column = 3)
-    printXMLButton = Tkinter.Button(root, text = 'Print XML',
+    printXMLButton = tkinter.Button(root, text = 'Print XML',
                                     command = \
                                     lambda: _printXML(parameterEditor))
     printXMLButton.grid(row = 0, column = 4)

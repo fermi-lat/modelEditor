@@ -9,12 +9,12 @@
 
 # Standard modules
 import os
-from tkFileDialog import Open, SaveAs
+from tkinter.filedialog import Open, SaveAs
 from tkinter.messagebox import askyesno, showwarning
-import Tkinter
+import tkinter
 import sys
 from xml.parsers.expat import ExpatError
-import thread
+import _thread
 
 # Third-party modules
 import Pmw
@@ -33,7 +33,7 @@ from DS9Connector import DS9Connector
 
 #******************************************************************************
 
-class ModelEditorApp(Tkinter.Frame):
+class ModelEditorApp(tkinter.Frame):
 
     # Class variables.
 
@@ -53,7 +53,7 @@ class ModelEditorApp(Tkinter.Frame):
     def __init__(self, parent = None, path   = None, *args, **kwargs):
 
         # Initialize the Frame base class.
-        Tkinter.Frame.__init__(self, parent, *args, **kwargs)
+        tkinter.Frame.__init__(self, parent, *args, **kwargs)
 
         # Create the main menubar.
         self._createMenubar()
@@ -87,7 +87,7 @@ class ModelEditorApp(Tkinter.Frame):
     def _createMenubar(self):
 
         # Create and attach the menu bar for the root window.
-        menuBar = Tkinter.Menu(self.master)
+        menuBar = tkinter.Menu(self.master)
         self.master.config(menu = menuBar)
 
         # Create the individual menus and attach to the menu bar.
@@ -101,7 +101,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createFileMenu(self, menuBar):
-        fileMenu = Tkinter.Menu(menuBar)
+        fileMenu = tkinter.Menu(menuBar)
         fileMenu.add_command(label = 'New', command = self._onFileNew)
         fileMenu.add_command(label = 'Open...', command = self._onFileOpen)
         fileMenu.add_command(label = 'Close', command = self._onFileClose)
@@ -297,7 +297,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createEditMenu(self, menuBar):
-        editMenu = Tkinter.Menu(menuBar)
+        editMenu = tkinter.Menu(menuBar)
         editMenu.add_command(label = 'Cut', command = self.onEditCut)
         editMenu.add_command(label = 'Copy', command = self.onEditCopy)
         editMenu.add_command(label = 'Paste', command = self.onEditPaste)
@@ -325,7 +325,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createSourceMenu(self, menuBar):
-        sourceMenu = Tkinter.Menu(menuBar)
+        sourceMenu = tkinter.Menu(menuBar)
         sourceMenu.add_command(label = 'Add Source',
                                command = self._onSourceAddSource)
         sourceMenu.add_command(label = 'Remove Source',
@@ -625,7 +625,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createSortMenu(self,menuBar):
-        sortMenu = Tkinter.Menu(menuBar)
+        sortMenu = tkinter.Menu(menuBar)
         self.sortAscending = True
         self.sortMethod = None
         sortMenu.add_command(label = "Sort Ascending", foreground="red", activeforeground="red", command = (lambda: self._toggleSorting(True,sortMenu)))
@@ -680,7 +680,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createDS9Menu(self,menuBar):
-        ds9Menu = Tkinter.Menu(menuBar)
+        ds9Menu = tkinter.Menu(menuBar)
         self.showDS9Sources = False
         self.showDS9TextLabels = False
         self.ds9 = None
@@ -695,7 +695,7 @@ class ModelEditorApp(Tkinter.Frame):
     #--------------------------------------------------------------------------
 
     def _createHelpMenu(self, menuBar):
-        helpMenu = Tkinter.Menu(menuBar)
+        helpMenu = tkinter.Menu(menuBar)
         helpMenu.add_command(label = 'Help', command = self._onHelpHelp)
         helpMenu.add_command(label = 'About...', command = self._onHelpAbout)
         menuBar.add_cascade(label = 'Help', menu = helpMenu)
@@ -750,7 +750,7 @@ if __name__ == '__main__':
             print ('path = ' + path)
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('ModelEditor (%s)' % path)
 
