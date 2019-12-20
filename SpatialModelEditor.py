@@ -5,8 +5,8 @@
 # Import external modules.
 
 # Standard modules
-from tkFileDialog import Open
-import Tkinter
+from tkinter.filedialog import Open
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -34,7 +34,7 @@ class SpatialModelEditor(ElementEditor):
     _fileEntryField: (Pmw.EntryField) For specifying a file associated
     with the SpatialModel.
 
-    _fileBrowseButton: (Tkinter.Button) Summons a Open dialog to select
+    _fileBrowseButton: (tkinter.Button) Summons a Open dialog to select
     a file for the fileEntryField.
 
     _parameterEditors: (ParameterEditor) List of ParameterEditor
@@ -60,7 +60,7 @@ class SpatialModelEditor(ElementEditor):
 
         self: This object.
 
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         spectrum: (SpatialModel) SpatialModel to initialize fields.
 
@@ -121,7 +121,7 @@ class SpatialModelEditor(ElementEditor):
         self._balloon.bind(self._fileEntryField,
                            'Enter the path to the file of data for this'\
                            ' spatial model.')
-        button = Tkinter.Button(self, text = 'Browse', command = self.onBrowse)
+        button = tkinter.Button(self, text = 'Browse', command = self.onBrowse)
         button.grid(row = 0, column = 2, sticky = 'e')
         self._fileBrowseButton = button
         self._balloon.bind(self._fileBrowseButton,
@@ -129,7 +129,7 @@ class SpatialModelEditor(ElementEditor):
                            'model.')
 
         # Create and grid a Frame for the set of ParameterEditors.
-        frame = Tkinter.Frame(self)
+        frame = tkinter.Frame(self)
         frame.grid(row = 1, column = 0, columnspan = 3, sticky = 'ew')
 
         # Create and grid a set of ParameterEditors.
@@ -371,7 +371,7 @@ def _printXML(editor):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('SpatialModelEditor test')
 
@@ -379,17 +379,17 @@ if __name__ == '__main__':
     # to commit changes, and a button to dump its contents.
     spatialModelEditor = SpatialModelEditor()
     spatialModelEditor.grid(row = 0, column = 0)
-    commitButton = Tkinter.Button(root, text = 'Commit',
+    commitButton = tkinter.Button(root, text = 'Commit',
                                   command = spatialModelEditor.commit)
     commitButton.grid(row = 0, column = 1)
-    resetButton = Tkinter.Button(root, text = 'Reset',
+    resetButton = tkinter.Button(root, text = 'Reset',
                                   command = spatialModelEditor.reset)
     resetButton.grid(row = 0, column = 2)
-    printButton = Tkinter.Button(root, text = 'Print',
+    printButton = tkinter.Button(root, text = 'Print',
                                  command = \
                                  lambda: _print(spatialModelEditor))
     printButton.grid(row = 0, column = 3)
-    printXMLButton = Tkinter.Button(root, text = 'Print XML',
+    printXMLButton = tkinter.Button(root, text = 'Print XML',
                                     command = \
                                     lambda: _printXML(spatialModelEditor))
     printXMLButton.grid(row = 0, column = 4)

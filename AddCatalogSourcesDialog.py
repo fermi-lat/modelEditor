@@ -5,8 +5,8 @@
 # Import external modules.
 
 # Standard modules
-from Tkinter import Toplevel,Label,Button,Frame,LEFT,TOP,YES,RIGHT,X,E,ACTIVE,DISABLED,NORMAL
-from tkFileDialog import askopenfilename,askdirectory
+from tkinter import Toplevel,Label,Button,Frame,LEFT,TOP,YES,RIGHT,X,E,ACTIVE,DISABLED,NORMAL
+from tkinter.filedialog import askopenfilename,askdirectory
 from os.path import isfile,dirname,isdir
 from os import getenv
 
@@ -240,7 +240,7 @@ class AddCatalogSourcesDialog():
         - none
 
         Description:
-        This method uses the standard Tkinter Open File dialog to allow the user
+        This method uses the standard tkinter Open File dialog to allow the user
         to select a file name to associate with the passed in entry field.  If the
         user selects a file, it is store in the field.  If not file is selected, the
         entry field is not updated.
@@ -265,7 +265,7 @@ class AddCatalogSourcesDialog():
         - none
 
         Description:
-        This method uses the standard Tkinter Open File dialog to allow the user
+        This method uses the standard tkinter Open File dialog to allow the user
         to select a file name to associate with the passed in entry field.  If the
         user selects a file, it is store in the field.  If not file is selected, the
         entry field is not updated.

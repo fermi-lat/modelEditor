@@ -5,7 +5,7 @@
 # Import external modules.
 
 # Standard modules
-import Tkinter
+import tkinter
 
 # Third-party modules
 import Pmw
@@ -16,7 +16,7 @@ from SourceLibraryEditor import SourceLibraryEditor
 
 #******************************************************************************
 
-class SourceLibraryDocumentEditor(Tkinter.Frame):
+class SourceLibraryDocumentEditor(tkinter.Frame):
     """Class to edit ModelEditor SourceLibraryDocument objects.
 
     Python implementation of the SourceLibraryDocumentEditor class
@@ -48,14 +48,14 @@ class SourceLibraryDocumentEditor(Tkinter.Frame):
 
         self: This object.
 
-        parent: (Tkinter.Frame) Parent object for this widget.
+        parent: (tkinter.Frame) Parent object for this widget.
 
         sourceLibraryDocument: (SourceLibraryDocument) Object to edit.
         """
 
         # Initialize the parent class. Note that this class does NOT
         # derive from ElementEditor.
-        Tkinter.Frame.__init__(self, parent, *args, **kwargs)
+        tkinter.Frame.__init__(self, parent, *args, **kwargs)
 
         # Create widgets.
         self._makeWidgets()
@@ -335,7 +335,7 @@ def _printXML(editor):
 if __name__ == '__main__':
 
     # Create the root window.
-    root = Tkinter.Tk()
+    root = tkinter.Tk()
     Pmw.initialise(root)
     root.title('SourceLibraryDocumentEditor test')
 
@@ -356,17 +356,17 @@ if __name__ == '__main__':
     sourceLibraryDocumentEditor = \
         SourceLibraryDocumentEditor(root, sourceLibraryDocument)
     sourceLibraryDocumentEditor.grid(row = 0, column = 0)
-    commitButton = Tkinter.Button(root, text = 'Commit',
+    commitButton = tkinter.Button(root, text = 'Commit',
                                   command = sourceLibraryDocumentEditor.commit)
     commitButton.grid(row = 0, column = 1)
-    resetButton = Tkinter.Button(root, text = 'Reset',
+    resetButton = tkinter.Button(root, text = 'Reset',
                                   command = sourceLibraryDocumentEditor.reset)
     resetButton.grid(row = 0, column = 2)
-    printButton = Tkinter.Button(root, text = 'Print',
+    printButton = tkinter.Button(root, text = 'Print',
                                  command = \
                                  lambda: _print(sourceLibraryDocumentEditor))
     printButton.grid(row = 0, column = 3)
-    printXMLButton = Tkinter.Button(root, text = 'Print XML',
+    printXMLButton = tkinter.Button(root, text = 'Print XML',
                                     command = \
                                     lambda: _printXML(sourceLibraryDocumentEditor))
     printXMLButton.grid(row = 0, column = 4)
