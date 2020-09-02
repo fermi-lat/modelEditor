@@ -13,7 +13,7 @@ from FitsFile import FitsFile
 from os import sys
 from tkinter.messagebox import askyesno, showwarning
 from tkinter.filedialog import Open
-import _thread #this should get updated to the threading module at some point
+import _thread as thread #this should get updated to the threading module at some point
 from time import sleep
 import queue
 import re

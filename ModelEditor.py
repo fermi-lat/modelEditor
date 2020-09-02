@@ -14,7 +14,7 @@ from tkinter.messagebox import askyesno, showwarning
 import tkinter
 import sys
 from xml.parsers.expat import ExpatError
-import _thread
+import _thread as thread
 
 # Third-party modules
 import Pmw
