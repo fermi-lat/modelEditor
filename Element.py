@@ -102,7 +102,7 @@ class Element:
         # Assemble a "key=value"-type format string for the data
         # attributes. Note that dictionary lookups will be used for
         # value substitution.
-        names = self.__dict__.keys()
+        names = list(self.__dict__.keys())
         names.sort()
         attributesFormat = ','.join(['%s=%%(%s)s' % (name, name)
                                      for name in names])
@@ -113,8 +113,8 @@ class Element:
         # Compute string values for each data attribute, and save them
         # in a dictionary by attribute name.
         members = {}
-        for k, v in self.__dict__.iteritems():
-            if isinstance(v, types.ListType):
+        for k, v in iter(self.__dict__.items()):
+            if isinstance(v, list):
                 members[k] = '[' + ','.join(str(x) for x in v) + ']'
             else:
                 members[k] = str(v)
