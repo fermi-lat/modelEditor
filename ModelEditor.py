@@ -733,7 +733,10 @@ verbose = False
 
 # If run as a script, build and run the application.
 if __name__ == '__main__':
+    main()
 
+def main():
+    '''Main function defined to act as entry point'''
     # Check for global execution flags.
     if '--debug' in sys.argv:
         debug = True
